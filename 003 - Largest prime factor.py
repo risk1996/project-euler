@@ -10,7 +10,7 @@ What is the largest prime factor of the number 600851475143 ?
 from math import sqrt
 
 
-def fact(n):
+def factors(n):
     limit = int(sqrt(n)) + 1
     res = []
     for i in range(1, limit):
@@ -21,8 +21,8 @@ def fact(n):
 
 
 def is_prime(n):
-    return len(fact(n)) == 2
+    return len(factors(n)) == 2
 
 
-sol = max([x for x in fact(600851475143) if is_prime(x)])
+sol = max([x for x in factors(600851475143) if is_prime(x)])
 print(sol)

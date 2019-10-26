@@ -18,7 +18,7 @@ What is the value of the first triangle number to have over five hundred divisor
 """
 
 
-def fact(n):
+def factors(n):
     limit = int(n ** (1/2)) + 1
     res = []
     for i in range(1, limit):
@@ -35,7 +35,7 @@ def tri(n):
 def find_sol():
     for i in range(7, 1_000_000):
         num = tri(i)
-        if len(fact(num)) > 500:
+        if len(factors(num)) > 500:
             return num
 
 
