@@ -34,7 +34,7 @@ def factors(n):
 
 
 def is_prime(n):
-    return len(fact(n)) == 2
+    return len(factors(n)) == 2
 
 
 def quadratic_consecutive_primes(a, b):

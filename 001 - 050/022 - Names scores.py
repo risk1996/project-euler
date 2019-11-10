@@ -25,7 +25,7 @@ def name_score(i, name):
     return i * sum(name_chars)
 
 
-sorted_name = sorted(name_list('res/p022_names.txt'))
+sorted_name = sorted(name_list('../res/p022_names.txt'))
 scores = [name_score(i + 1, name) for i, name in enumerate(sorted_name)]
 sol = sum(scores)
 print(sol)
