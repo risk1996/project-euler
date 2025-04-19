@@ -11,7 +11,7 @@ impl<T: PrimInt + AsPrimitive<f64> + FromPrimitive + Unsigned> SqrtFloor for T {
 }
 
 #[cfg(test)]
-mod test {
+mod tests {
 
   use super::*;
 
