@@ -34,6 +34,14 @@ impl PrimeSieve {
     }
   }
 
+  pub fn to_nth(zero_indexed_nth: usize) -> Self {
+    let nth = (zero_indexed_nth + 1) as f64;
+    // NOTE: Using reasonable nth prime upper bound, which holds when n >= 6;
+    let upper = (nth * (nth.ln() + nth.ln().ln()) + 1.) as usize;
+    let upper = upper.max(5);
+    Self::of_size(upper)
+  }
+
   pub fn primes(self) -> Vec<usize> {
     let mut primes = Vec::from_iter(self.primes);
     primes.sort();
@@ -50,7 +58,7 @@ mod tests {
   use super::*;
 
   #[test]
-  fn test_prime_sieve() {
+  fn test_prime_sieve_primes() {
     let cases = [
       (1, vec![]),
       (11, vec![2, 3, 5, 7, 11]),
@@ -62,10 +70,33 @@ mod tests {
       ]),
     ];
 
-    for (input, primes) in cases {
-      let primes = HashSet::from_iter(primes);
-      let expected = PrimeSieve { primes };
-      assert_eq!(PrimeSieve::of_size(input), expected);
+    for (size, expected) in cases {
+      let sieve = PrimeSieve::of_size(size);
+      let actual = sieve.primes();
+      assert_eq!(actual, expected);
+    }
+  }
+
+  #[test]
+  fn test_prime_sieve_nth() {
+    let cases = [
+      (0, 2),
+      (1, 3),
+      (2, 5),
+      (3, 7),
+      (4, 11),
+      (5, 13),
+      (6, 17),
+      (99, 541),
+      (999, 7_919),
+      (9_999, 104_729),
+    ];
+
+    for (input, expected) in cases {
+      let sieve = PrimeSieve::to_nth(input);
+      let primes = sieve.primes();
+      assert!(primes.len() >= input);
+      assert_eq!(primes[input], expected);
     }
   }
 }
