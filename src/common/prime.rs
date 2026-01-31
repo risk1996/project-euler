@@ -51,7 +51,7 @@ mod tests {
 
   #[test]
   fn test_prime_sieve() {
-    let cases = vec![
+    let cases = [
       (1, vec![]),
       (11, vec![2, 3, 5, 7, 11]),
       (300, vec![

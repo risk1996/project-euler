@@ -12,7 +12,7 @@ pub mod tests {
 
   #[test]
   fn test_solve() {
-    let cases = vec![(1..=10, 2_520), (1..=20, 232_792_560)];
+    let cases = [(1..=10, 2_520), (1..=20, 232_792_560)];
 
     for (input, expected) in cases {
       assert_eq!(solve(&input), expected);

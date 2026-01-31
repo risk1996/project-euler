@@ -18,7 +18,7 @@ pub mod tests {
 
   #[test]
   fn test_solve() {
-    let cases = vec![(10..=99, 9_009), (100..=999, 906_609)];
+    let cases = [(10..=99, 9_009), (100..=999, 906_609)];
 
     for (input, expected) in cases {
       assert_eq!(solve(&input), expected);

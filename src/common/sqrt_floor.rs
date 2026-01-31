@@ -17,7 +17,7 @@ mod tests {
 
   #[test]
   fn test_sqrt_floor() {
-    let cases = vec![(0u32, 0), (1, 1), (5, 2), (9, 3), (24, 4)];
+    let cases = [(0u32, 0), (1, 1), (5, 2), (9, 3), (24, 4)];
 
     for (input, expected) in cases {
       assert_eq!(input.sqrt_floor(), expected);

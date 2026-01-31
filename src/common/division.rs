@@ -35,7 +35,7 @@ mod tests {
 
   #[test]
   fn test_gcd() {
-    let cases = vec![
+    let cases = [
       ((4usize, 4), 4),
       ((5, 5), 5),
       ((6, 4), 2),
@@ -54,7 +54,7 @@ mod tests {
 
   #[test]
   fn test_lcm() {
-    let cases = vec![
+    let cases = [
       ((4usize, 4), 4),
       ((5, 5), 5),
       ((6, 4), 12),

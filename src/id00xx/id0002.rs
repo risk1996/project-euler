@@ -16,7 +16,7 @@ pub mod tests {
 
   #[test]
   fn test_solve() {
-    let cases = vec![(89, 2 + 8 + 34), (4_000_000, 4_613_732)];
+    let cases = [(89, 2 + 8 + 34), (4_000_000, 4_613_732)];
 
     for (input, expected) in cases {
       assert_eq!(solve(input), expected);
