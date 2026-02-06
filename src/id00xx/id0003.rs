@@ -1,4 +1,4 @@
-use crate::common::{prime::PrimeSieve, sqrt_floor::SqrtFloor};
+use crate::common::{prime::PrimeSieve, sqrt::SqrtFloor};
 
 pub fn solve(n: usize) -> usize {
   PrimeSieve::of_size(n.sqrt_floor())

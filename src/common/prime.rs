@@ -1,6 +1,6 @@
 use std::collections::HashSet;
 
-use crate::common::sqrt_floor::SqrtFloor;
+use crate::common::sqrt::SqrtFloor;
 
 #[derive(Debug, PartialEq, Eq, Clone)]
 pub struct PrimeSieve {

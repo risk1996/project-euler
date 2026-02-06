@@ -1,18 +1,17 @@
 use num_traits::{AsPrimitive, FromPrimitive, PrimInt, Unsigned};
 
 pub trait SqrtFloor {
-  fn sqrt_floor(self) -> Self;
+  fn sqrt_floor(&self) -> Self;
 }
 
 impl<T: PrimInt + AsPrimitive<f64> + FromPrimitive + Unsigned> SqrtFloor for T {
-  fn sqrt_floor(self) -> Self {
+  fn sqrt_floor(&self) -> Self {
     Self::from(self.as_().sqrt()).unwrap()
   }
 }
 
 #[cfg(test)]
 mod tests {
-
   use super::*;
 
   #[test]
